@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script>
+class CreateNode
+{
+	constructor()
+	{
+		this.data_part=0;
+		this.next_part=null;
+	}
+}
+class use_for_Stack
+{
+	constructor()
+	{
+		this.position_of_top=null;
+	}
+	push(item)
+	{
+      let temporary=new CreateNode();
+      if(this.position_of_top==null)
+      {
+            temporary.data_part=item;
+            temporary.next_part=null;
+            this.position_of_top=temporary;
+            document.write("Element inserted in the Stack: "+temporary.data_part+"<br/>");
+      }
+      else
+      {
+          temporary.data_part=item;
+          temporary.next_part=this.position_of_top;
+          this.position_of_top=temporary;
+          document.write("Element inserted in the Stack: "+temporary.data_part+"<br/>")
+      }
+	}
+	peek()
+	{
+    if(this.position_of_top==null)
+    {
+          document.write("stack is empty<br/>");
+    }
+    else
+    {
+        document.write("Top Element in the stack: "+this.position_of_top.data_part+"<br/>");
+    }
+	}
+	pop()
+	{
+        if(this.position_of_top==null)
+        {
+          document.write("Stack is empty: <br/>");
+        }
+        else
+        {
+              document.write("Popped element from stack: "+this.position_of_top.data_part+"<br/>");
+              this.position_of_top=this.position_of_top.next_part;
+        }
+	}
+
+	display()
+	{
+		if (this.position_of_top == null)
+    {
+			document.write("Stack is empty: <br/>");
+		}
+		else
+    {
+      document.write("Present elements in the stack: ");
+			let temporary = this.position_of_top;
+			while (temporary != null) {
+				document.write(temporary.data_part+" ");
+				temporary = temporary.next_part;
+			}
+      document.write("<br/>");
+		}
+	}
+}
+let s = new use_for_Stack();
+s.push(20);
+s.push(21);
+s.push(22);
+s.push(23);
+s.push(24);
+s.push(25);
+s.push(26);
+s.push(27);
+s.push(28);
+s.push(29);
+s.push(30);
+document.write("<br/>");
+s.pop();
+s.pop();
+s.pop();
+document.write("<br/>");
+s.peek();
+document.write("<br/>");
+s.display();
+</script>
+</body>
+</html>
